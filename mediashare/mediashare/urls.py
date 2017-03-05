@@ -19,8 +19,8 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^practicals/', include('practicals.urls')),
     url(r'^torrent/', include('Torrent.urls')),
-    url(r'^blog/', include('blog.urls')),
+    url(r'^', include('blog.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^megalinks/', include('megalinks.urls')),
-    url('^', include('django.contrib.auth.urls')),
+    # url('^', include('django.contrib.auth.urls')),
 ]

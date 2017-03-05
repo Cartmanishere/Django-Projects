@@ -9,6 +9,27 @@ from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 from django.contrib import messages
+from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from django.contrib.auth.models import Group
+import requests
+import re
+import json
+
+def check(link):
+	link_match = re.search(r'/#!(.*)!(.*)$', link) or re.search(r'/#F!(.*)!(.*)$', link)
+	if link_match == None:
+		return False
+	else:
+		mega_data = [{"a":"g", "g":1, "ssl":0, "p":link_match.group(1)}]
+		mega_response = requests.post("https://g.api.mega.co.nz/cs", data=json.dumps(mega_data))
+		if json.loads(mega_response.text)[0] == -9:
+			return False
+		else:
+			return True
+
 
 
 def newindex(request):
@@ -125,4 +146,36 @@ def activity(request):
         'page_range': page_range,
     }
     return HttpResponse(template.render(context, request))
+
+def register(request):
+    if request.method == 'POST':
+        user = request.POST['username']
+        passw = request.POST['password']
+        if user is "":
+            return HttpResponse("Enter Username")
+        else:
+            if passw is "":
+                return HttpResponse("Enter Password")
+            else:
+                user = User.objects.create_user(username=user, password=passw)
+                user.is_staff=True
+                user.save()
+                g = Group.objects.get(name='Uploaders')
+                g.user_set.add(user)
+                return HttpResponse("Successfully registered.")
+
+    return render(request, 'megalinks/signup.html', {})
+
+
+
+
+
+
+
+
+
+
+
+
+
 

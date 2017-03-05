@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+          {% load static %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-deep_purple.min.css" />
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="{% static 'megalinks/favicon.png' %}">
+<title>Sign Up</title>
+<style>
+.demo-list-item {
+  width: 300px;
+}
+
+</style>
+<title>Main</title>
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--scroll">
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout__title">Megalinks</span>
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+      <h3 align="center" style="font-family: 'Roboto' 400;font-size: 30px;font-color: #444">Sign Up</h3>
+    <div  align="center">
+    	<form action="#" method="post" style="max-width: 320px; margin-top: 50px" align="center">
+  		<div class="mdl-textfield mdl-js-textfield" style="margin-left: 10px">
+    		<input class="mdl-textfield__input" type="text" id="sample1" name="username">
+    		<label class="mdl-textfield__label" for="sample1">Username...</label>
+  		</div><br />
+      <div class="mdl-textfield mdl-js-textfield" style="margin-left: 20px">
+          {% csrf_token %}
+        <input class="mdl-textfield__input" type="password" id="sample2" name="password">
+        <label class="mdl-textfield__label" for="sample2">Password...</label>
+      </div><br /><br />
+  		<button style="margin-left: 20px" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="submit()">
+  			Sign Up
+		</button>
+		</form>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

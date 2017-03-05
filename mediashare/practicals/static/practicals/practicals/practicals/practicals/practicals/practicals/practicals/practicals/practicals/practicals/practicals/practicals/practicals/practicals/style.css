@@ -1,0 +1,86 @@
+@import url(http://fonts.googleapis.com/css?family=Bitter:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+body {
+	text-align: center;
+	background: #474747 url(bg.png);
+}
+h1 {
+	display: block;
+	text-decoration: none;
+	font: 70px 'Bitter';
+	letter-spacing: -3px;
+	text-align: center;
+	color: #999;
+	text-shadow: 0px 3px 8px #2a2a2a;
+}
+h4 {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	font: 30px 'Bitter';
+	text-align: center;
+	color: #999;
+	text-shadow: 0px 3px 8px #2a2a2a;
+	padding-bottom: 7px;
+}
+p {
+	margin: 50px auto;
+	color: rgb(85, 85, 85);
+	opacity: 0.9;
+	font: 40px 'Lobster';
+	text-shadow: rgb(23, 23, 23) 0px 2px 3px;
+	background: #222;
+	border-style:solid;
+	border-width: 2px;
+	border-radius: 10px;
+	border-color: #222;
+	padding: 20px;
+	width: 75%;
+	line-height: 1.4;
+}
+#updates {
+	float: left;
+}
+#subjects {
+	margin: 50px auto;
+	color: rgb(85, 85, 85);
+	opacity: 0.9;
+	font: 30px 'Lobster';
+	font-size: 30px;
+	text-shadow: rgb(23, 23, 23) 0px 2px 3px;
+	background: #222;
+	border-style:solid;
+	border-width: 2px;
+	border-radius: 20px;
+	border-color: #222;
+	padding: 20px;
+	width: 75%;
+	line-height: 1.4;
+	width: 55%;
+}
+#menu {
+	margin: 50px auto;
+	color: rgb(85, 85, 85);
+	opacity: 0.9;
+	font: 40px 'Bitter';
+	padding: 20px;
+	width: 75%;
+	line-height: 1.4;
+	padding-top: 25px;
+}
+#info{
+	margin: 50px auto;
+	color: rgb(85, 85, 85);
+	opacity: 0.9;
+	font: 20px 'Bitter';
+	color: #999;
+	text-shadow: 0px 3px 8px #2a2a2a;
+	background: #222;
+	border-style:solid;
+	border-width: 2px;
+	border-radius: 10px;
+	border-color: #222;
+	padding: 20px;
+	width: 75%;
+	line-height: 1.4;
+}

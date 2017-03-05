@@ -109,8 +109,12 @@
                 {% if link %}
             <div class="mdl-tabs__panel is-active" id="desc-panel">
                 <p style="margin: 20px; font-size: 20px">{{ link.description|safe|linebreaks }}</p>
+                <p>Submitted by {{ link.user }}</p>
             </div>
             <div class="mdl-tabs__panel" id="dl-panel">
+                {% if status %}
+                <p style="margin: 20px; font-size: 20px">THIS LINKS IS {{ status }}!</p>
+                {% endif %}
                 <p style="margin: 20px; font-size: 20px">Click below to download</p>
                 <a href="{{ link.link }}" style="margin: 20px; font-size: 20px">Download Link</a>
             </div>

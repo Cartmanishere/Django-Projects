@@ -6,6 +6,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.newindex, name='newindex'),
+    url(r'^register/', views.register, name="register"),
     url(r'^requests/$', views.requests, name='requests'),
     url(r'^activity/', views.activity, name="activity"),
     url(r'^(?P<tagfilter>[\w|\W]+)/1$', views.index, name='index'),

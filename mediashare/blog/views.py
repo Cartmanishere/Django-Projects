@@ -9,20 +9,7 @@ from django.contrib import messages
 
 
 def index(request):
-    post_list = Post.objects.all().order_by('-date')
-    template = loader.get_template('blog/index.html')
-    paginator = Paginator(post_list, 20)
-
-    page = request.GET.get('page')
-    try:
-        post = paginator.page(page)
-    except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
-        post = paginator.page(1)
-    except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
-        post = paginator.page(paginator.num_pages)
+    template = loader.get_template('blog/redirect.html')
     context = {
-        'post': post,
     }
     return HttpResponse(template.render(context, request))
