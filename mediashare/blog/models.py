@@ -11,3 +11,13 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=1000)
+    message = models.CharField(max_length=1000)
+    email = models.CharField(max_length=500)
+
+
+    def __str__(self):
+        return self.name
